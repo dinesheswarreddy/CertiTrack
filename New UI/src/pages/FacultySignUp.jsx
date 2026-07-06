@@ -15,7 +15,7 @@ export default function FacultySignUp() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API}/api/auth/register`, {
+      await axios.post(`${API}/api/auth/register`, {
         name,
         email,
         password,

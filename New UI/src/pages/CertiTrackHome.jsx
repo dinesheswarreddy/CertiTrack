@@ -1,65 +1,16 @@
 import { Link } from 'react-router-dom';
-import { Badge } from '../components/ui/Badge';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import {
   FileText,
   Users,
   GraduationCap,
-  Shield,
-  CheckCircle,
-  TrendingUp,
-  Award,
-  BarChart3
+  Shield
 } from 'lucide-react';
-const API = process.env.REACT_APP_BACKEND_API;
 
 
 
 export default function CertiTrackHome() {
   const [showMenu, setShowMenu] = useState(false);
-  const [userCounts, setUserCounts] = useState({ students: 0, faculty: 0 });
-  useEffect(() => {
-const fetchCounts = async () => {
-try {
-const res = await axios.get(`${API}/api/users/role-count`);
-setUserCounts(res.data);
-} catch (err) {
-console.error('Failed to fetch user counts:', err);
-}
-};
-fetchCounts();
-}, []);
-
-  const features = [
-    {
-      icon: <CheckCircle size={32} className="text-primary" />,
-      title: "Real-time Tracking",
-      description: "Monitor student certification progress with instant updates and notifications."
-    },
-    {
-      icon: <Users size={32} className="text-primary" />,
-      title: "Multi-role Access",
-      description: "Students, faculty, and administrators access with role-based permissions."
-    },
-    {
-      icon: <BarChart3 size={32} className="text-primary" />,
-      title: "Advanced Analytics",
-      description: "Detailed reporting and analytics to track trends and metrics."
-    },
-    {
-      icon: <Shield size={32} className="text-primary" />,
-      title: "Secure & Reliable",
-      description: "Robust cloud infrastructure and enterprise-grade data protection."
-    }
-  ];
-
-  const stats = [
-    { label: "Active Students", value: "2,500+", icon: <GraduationCap size={24} /> },
-    { label: "Certifications Tracked", value: "10,000+", icon: <Award size={24} /> },
-    { label: "Faculty Members", value: "150+", icon: <Users size={24} /> },
-    { label: "Success Rate", value: "98%", icon: <TrendingUp size={24} /> }
-  ];
 
   return (
     <div>

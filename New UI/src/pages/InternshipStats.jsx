@@ -34,6 +34,7 @@ export default function InternshipStats() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   const handleFilterChange = (e) => {

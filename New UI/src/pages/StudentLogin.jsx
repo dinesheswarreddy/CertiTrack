@@ -6,7 +6,7 @@ const API = process.env.REACT_APP_BACKEND_API;
 export default function StudentLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [regulation, setRegulation] = useState('');
+  const [regulation] = useState('');
   const [resetEmail, setResetEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [newPass, setNewPass] = useState('');
